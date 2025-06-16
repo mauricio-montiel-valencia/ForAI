@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.programation2_project2_mmontiel.Project2Controller">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-border-color: orange;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnMuseum" mnemonicParsing="false" text="Museum" />
+            <Button fx:id="btnRooms" mnemonicParsing="false" text="Rooms" />
+            <Button fx:id="btnViewRooms" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" text="View Rooms">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnThematics" mnemonicParsing="false" text="Thematics" />
+            <Button fx:id="btnPricesSell" mnemonicParsing="false" prefHeight="0.0" prefWidth="78.0" text="Prices/Sell" />
+            <Button fx:id="btnEntrance" mnemonicParsing="false" text="Entrance" />
+            <Button mnemonicParsing="false" text="Room Card" />
+         </children>
+         <padding>
+            <Insets left="20.0" top="60.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane layoutX="-1.0" prefHeight="400.0" prefWidth="502.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane fx:id="ID_BestAndWorstRooms" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Best and Worst Rooms">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="txtBAndWroomsBestRooms" layoutX="62.0" layoutY="81.0" prefHeight="118.0" prefWidth="346.0" />
+                        <Label layoutX="62.0" layoutY="59.0" text="Best Rooms:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="txtBAndWRoomsWorstRooms" layoutX="62.0" layoutY="237.0" prefHeight="118.0" prefWidth="346.0" />
+                        <Label layoutX="62.0" layoutY="215.0" text="Worst Rooms:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnBAndWRoomsCreatePDF" layoutX="404.0" layoutY="360.0" mnemonicParsing="false" text="Create a PDF" />
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="ID_TotalRoomValoration" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Total Valoration">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="133.0" layoutY="80.0" text="Numeric Valoration:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="13.0" layoutY="200.0" text="Stars Valoration:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="imgTotalRoomValorationStar" fitHeight="67.0" fitWidth="334.0" layoutX="84.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true" />
+                        <TextArea fx:id="txtTotalRoomValorationNumber" layoutX="274.0" layoutY="72.0" prefHeight="0.0" prefWidth="186.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ID_RoomValoration" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="21.0" text="Room Valoration">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="TOP_CENTER" layoutX="106.0" layoutY="145.0" prefHeight="26.0" prefWidth="290.0">
+                           <children>
+                              <Button fx:id="btnRoomValoration1Star" mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="1" />
+                              <Button fx:id="btnRoomValoration2Star" mnemonicParsing="false" prefHeight="26.0" prefWidth="42.0" text="2" />
+                              <Button fx:id="btnRoomValoration3Star" mnemonicParsing="false" prefHeight="26.0" prefWidth="42.0" text="3" />
+                              <Button fx:id="btnRoomValoration4Star" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" text="4" />
+                              <Button fx:id="btnRoomValoration5Star" mnemonicParsing="false" prefHeight="26.0" prefWidth="42.0" text="5" />
+                           </children>
+                        </HBox>
+                        <Label layoutX="14.0" layoutY="63.0" text="Calification:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="178.0" text="Observation:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtRoomValorationObservation" layoutX="110.0" layoutY="200.0" prefHeight="114.0" prefWidth="282.0" />
+                        <Button fx:id="btnRoomValorationSubmit" layoutX="437.0" layoutY="361.0" mnemonicParsing="false" text="Submit" />
+                        <ImageView fx:id="imgRoomValorationStar" fitHeight="32.0" fitWidth="296.0" layoutX="110.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="btnRoomValorationGeneralValoration" layoutX="276.0" layoutY="361.0" mnemonicParsing="false" text="See General Valoration" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ID_RoomCardFX" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Room Card">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="14.0" layoutY="59.0" mnemonicParsing="false" text="Choose QR" />
+                        <Label layoutX="185.0" layoutY="48.0" text="Name:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextArea layoutX="237.0" layoutY="40.0" prefHeight="0.0" prefWidth="200.0" />
+                        <Label layoutX="153.0" layoutY="102.0" text="Description:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextArea layoutX="237.0" layoutY="93.0" prefHeight="0.0" prefWidth="200.0" />
+                        <Button fx:id="btnRoomCardLeft" layoutX="21.0" layoutY="241.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="30.0" text="&lt;" />
+                        <Button fx:id="btnRoomCardRight" layoutX="205.0" layoutY="241.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="30.0" text="&gt;" />
+                        <TextArea fx:id="txtRoomCardSpeciesName" layoutX="60.0" layoutY="200.0" prefHeight="0.0" prefWidth="136.0" />
+                        <TextArea fx:id="txtRoomCardThematicName" layoutX="301.0" layoutY="200.0" prefHeight="0.0" prefWidth="136.0" />
+                        <ImageView fx:id="imgRoomCardSpecies" fitHeight="120.0" fitWidth="154.0" layoutX="51.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="imgRoomCardThematic" fitHeight="120.0" fitWidth="154.0" layoutX="292.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="btnRoomCardNext" layoutX="437.0" layoutY="361.0" mnemonicParsing="false" text="Next" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ID_EntranceFX" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Entrance Validation">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnEntranceChooseTicket" layoutX="69.0" layoutY="78.0" mnemonicParsing="false" text="Choose Ticket" />
+                        <ImageView fx:id="imgEntranceTicket" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true" />
+                        <TextArea fx:id="txtEntranceAccess" layoutX="282.0" layoutY="209.0" prefHeight="0.0" prefWidth="173.0" />
+                        <Label layoutX="282.0" layoutY="190.0" text="Access:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="dateEntranceDate" layoutX="281.0" layoutY="141.0" />
+                        <Label layoutX="282.0" layoutY="117.0" text="Date:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ID_PricesAndSellQRTicket" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="QR Code">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="imgPricesAndSellQREntrance" fitHeight="261.0" fitWidth="304.0" layoutX="99.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label layoutX="35.0" layoutY="338.0" text="This QR code is your ticket for the museum, please don't throw it.">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnPricesAndSellPDFReport" layoutX="192.0" layoutY="360.0" mnemonicParsing="false" text="Create a pdf report" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ID_PricesAndSellFX" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Prices and Sell">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="212.0" layoutY="37.0" text="Date:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="datePricesDate" layoutX="251.0" layoutY="34.0" prefHeight="26.0" prefWidth="222.0" />
+                        <ImageView fx:id="imgPricesRoom" fitHeight="110.0" fitWidth="124.0" layoutX="45.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="btnPricesLeftButton" layoutX="14.0" layoutY="139.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="30.0" text="&lt;">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnPricesRightButton" layoutX="169.0" layoutY="139.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="30.0" text="&gt;">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnPricesChooseButton" layoutX="46.0" layoutY="248.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="122.0" text="Choose" />
+                        <Label layoutX="8.0" layoutY="328.0" text="Total Price:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="txtPricesTotalPrice" layoutX="87.0" layoutY="331.0" prefHeight="38.0" prefWidth="70.0" />
+                        <TextArea fx:id="txtPriceRoomChooseName" layoutX="57.0" layoutY="82.0" prefHeight="0.0" prefWidth="100.0" />
+                        <Label layoutX="212.0" layoutY="76.0" text="Room Price:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="212.0" layoutY="134.0" text="Room Description:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="txtPricesRoomPrice" layoutX="300.0" layoutY="77.0" prefHeight="39.0" prefWidth="154.0" />
+                        <TextArea fx:id="txtPricesRoomDescription" layoutX="237.0" layoutY="166.0" prefHeight="84.0" prefWidth="244.0" />
+                        <ComboBox fx:id="txtPricesKeyCard" layoutX="175.0" layoutY="335.0" prefHeight="23.0" prefWidth="131.0" />
+                        <Label layoutX="210.0" layoutY="308.0" text="Type of Card" />
+                        <TextArea fx:id="txtPricesComission" layoutX="340.0" layoutY="329.0" prefHeight="39.0" prefWidth="116.0" />
+                        <Label layoutX="370.0" layoutY="308.0" text="Comission" />
+                        <Button fx:id="btnPricesBuyEntrance" layoutX="195.0" layoutY="373.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Buy Entrance" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ID_Thematics" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Thematic Data">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="121.0" layoutY="96.0" text="Thematic Name:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtThematicName" layoutX="237.0" layoutY="94.0" prefHeight="26.0" prefWidth="245.0" />
+                        <Label layoutX="140.0" layoutY="133.0" text="Thematic Era:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="64.0" layoutY="170.0" text="Thematic Characteristics:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtThematicCharacteristics" layoutX="237.0" layoutY="167.0" prefHeight="105.0" prefWidth="246.0" />
+                        <ImageView fx:id="imgThematicPhoto" fitHeight="136.0" fitWidth="178.0" layoutX="21.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="btnUploadThematic" layoutX="427.0" layoutY="348.0" mnemonicParsing="false" text="Upload" />
+                        <DatePicker fx:id="dateThematicEra" layoutX="237.0" layoutY="130.0" prefHeight="26.0" prefWidth="247.0" />
+                        <TextArea fx:id="txtRoomNameFromRooms" layoutX="236.0" layoutY="49.0" prefHeight="19.0" prefWidth="246.0" />
+                        <Label layoutX="140.0" layoutY="56.0" text="Room Name:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ID_VRoomsCollectionSpecies" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Species">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tabVRSpeciesData" layoutX="14.0" layoutY="64.0" prefHeight="136.0" prefWidth="478.0">
+                          <columns>
+                            <TableColumn fx:id="sTabVRSpeciesScientificName" prefWidth="137.59997844696045" text="Scientific Name" />
+                            <TableColumn fx:id="sTabVRSpeciesCommonName" prefWidth="119.19998168945312" text="Common Name" />
+                              <TableColumn fx:id="sTabVRSpeciesExtinctionDaate" prefWidth="108.0" text="Extinction Date" />
+                              <TableColumn fx:id="sTabVRSpeciesEraLived" prefWidth="112.00006103515625" text="Era Lived" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="tabVRSpeciesData2" layoutX="14.0" layoutY="200.0" prefHeight="136.0" prefWidth="478.0">
+                           <columns>
+                              <TableColumn fx:id="sTabVRSpeciesWeight" prefWidth="137.59997844696045" text="Weight" />
+                              <TableColumn fx:id="sTabVRSpeciesHeight" prefWidth="119.19998168945312" text="Height" />
+                              <TableColumn fx:id="sTabVRSpeciesCharacteristics" prefWidth="108.0" text="Characteristics" />
+                              <TableColumn fx:id="sTabVRSpeciesImage" prefWidth="112.00006103515625" text="Image" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="btnVRSpeciesAddSpecie" layoutX="339.0" layoutY="361.0" mnemonicParsing="false" text="Add Specie" />
+                        <Button fx:id="btnVRSpeciesBackToCollections" layoutX="193.0" layoutY="361.0" mnemonicParsing="false" text="Back to Collections" />
+                        <Button fx:id="btnVRSpeciesBackToRooms" layoutX="74.0" layoutY="361.0" mnemonicParsing="false" text="Back to Rooms" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ID_VRoomCollection" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Room Collections">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tabVRCollectionList" layoutX="32.0" layoutY="91.0" prefHeight="200.0" prefWidth="438.0">
+                          <columns>
+                            <TableColumn fx:id="sTabCollectionName" prefWidth="113.60004043579102" text="Collection Name" />
+                            <TableColumn fx:id="sTabCollectionEra" prefWidth="144.79995727539062" text="Era" />
+                              <TableColumn fx:id="sTabCollectionDescription" minWidth="0.0" prefWidth="178.39999999999998" text="Description" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnVRCollectionAddCollection" layoutX="269.0" layoutY="360.0" mnemonicParsing="false" text="Add Collection" />
+                        <Button fx:id="btnVRCollectionSpecies" layoutX="414.0" layoutY="360.0" mnemonicParsing="false" text="Species" />
+                        <Button fx:id="btnVRCollectionBacktoRooms" layoutX="131.0" layoutY="360.0" mnemonicParsing="false" text="Back to Rooms" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ID_ViewRoomFX" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="26.0" layoutY="37.0" text="Rooms Created">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnVRoomCollection" layoutX="401.0" layoutY="360.0" mnemonicParsing="false" text="Collections" />
+                        <TableView fx:id="tabRoomData" layoutX="33.0" layoutY="80.0" prefHeight="200.0" prefWidth="435.0">
+                          <columns>
+                            <TableColumn fx:id="sTabRoomName" prefWidth="100.00000381469727" text="Room Name" />
+                            <TableColumn fx:id="sTabRoomDescription" prefWidth="222.39993286132812" text="Description" />
+                              <TableColumn fx:id="sTabRoomQR" minWidth="0.0" prefWidth="112.79998779296875" text="QR Code" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ID_SpeciesFX" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Collection of Species">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="148.0" layoutY="72.0" text="Scientific Name:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtScientificSpeciesName" layoutX="267.0" layoutY="70.0" prefHeight="26.0" prefWidth="218.0" />
+                        <Label layoutX="148.0" layoutY="105.0" text="Common Name:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCommonSpeciesName" layoutX="267.0" layoutY="102.0" prefHeight="26.0" prefWidth="218.0" />
+                        <Label layoutX="155.0" layoutY="139.0" text="Extinction Date:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtSpeciesExtinctionDate" layoutX="267.0" layoutY="136.0" prefHeight="26.0" prefWidth="218.0" />
+                        <Label layoutX="194.0" layoutY="172.0" text="Era Lived:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="207.0" layoutY="204.0" text="Weight:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtSpeciesWeight" layoutX="267.0" layoutY="202.0" prefHeight="26.0" prefWidth="218.0" />
+                        <Label layoutX="211.0" layoutY="239.0" text="Height:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtSpeciesHeight" layoutX="267.0" layoutY="236.0" prefHeight="26.0" prefWidth="218.0" />
+                        <Label layoutX="161.0" layoutY="269.0" text="Characteristics:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtSpeciesCharacteristic" layoutX="267.0" layoutY="266.0" prefHeight="63.0" prefWidth="218.0" />
+                        <ImageView fx:id="imgSpeciesPhoto" fitHeight="115.0" fitWidth="137.0" layoutX="14.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="btnRoomUpload" layoutX="429.0" layoutY="360.0" mnemonicParsing="false" text="Upload" />
+                        <DatePicker fx:id="dateSpeciesEraLived" layoutX="267.0" layoutY="170.0" prefHeight="26.0" prefWidth="218.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ID_CollectionFX" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Collections">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="87.0" layoutY="86.0" text="Collection Name:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCollectionName" layoutX="213.0" layoutY="84.0" prefHeight="26.0" prefWidth="234.0" />
+                        <Label layoutX="177.0" layoutY="127.0" text="Era:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCollectionDescription" layoutX="213.0" layoutY="166.0" prefHeight="137.0" prefWidth="234.0" />
+                        <Label layoutX="121.0" layoutY="166.0" text="Description:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnCollectionNext" layoutX="447.0" layoutY="360.0" mnemonicParsing="false" text="Next" />
+                        <DatePicker fx:id="dateCollectionEra" layoutX="213.0" layoutY="124.0" prefHeight="26.0" prefWidth="234.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ID_RoomFX" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Button fx:id="btnNextRoomData" layoutX="446.0" layoutY="360.0" mnemonicParsing="false" text="Next" />
+                        <TextField fx:id="txtRoomName" layoutX="282.0" layoutY="110.0" />
+                        <TextField fx:id="txtRoomDescription" layoutX="281.0" layoutY="163.0" prefHeight="145.0" prefWidth="150.0" />
+                        <Label layoutX="229.0" layoutY="112.0" text="Name:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="192.0" layoutY="163.0" text="Description:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="14.0" text="Room Creation">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="imgRoomCreationQR" fitHeight="150.0" fitWidth="154.0" layoutX="21.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="btnNoExhibitionRoom" layoutX="327.0" layoutY="360.0" mnemonicParsing="false" text="No Exhibition" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ID_MuseumFX" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="116.0" layoutY="67.0" prefHeight="34.0" prefWidth="42.0" text="Name:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="34.0" prefWidth="102.0" text="Museum Data">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMuseumName" layoutX="166.0" layoutY="71.0" prefHeight="26.0" prefWidth="241.0" />
+                        <Label layoutX="125.0" layoutY="107.0" prefHeight="34.0" prefWidth="42.0" text="Type:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMuseumType" layoutX="166.0" layoutY="111.0" prefHeight="26.0" prefWidth="241.0" />
+                        <Label layoutX="104.0" layoutY="146.0" prefHeight="34.0" prefWidth="66.0" text="Location:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMuseumLocation" layoutX="167.0" layoutY="150.0" prefHeight="26.0" prefWidth="241.0" />
+                        <Label layoutX="51.0" layoutY="185.0" prefHeight="34.0" prefWidth="119.0" text="Foundation Date:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMuseumDirectorName" layoutX="167.0" layoutY="227.0" prefHeight="26.0" prefWidth="241.0" />
+                        <Label layoutX="65.0" layoutY="223.0" prefHeight="34.0" prefWidth="119.0" text="Director Name:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="98.0" layoutY="262.0" prefHeight="34.0" prefWidth="119.0" text="Web Site:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMuseumWebSite" layoutX="166.0" layoutY="266.0" prefHeight="26.0" prefWidth="241.0" />
+                        <Button fx:id="btnMuseumUpload" layoutX="437.0" layoutY="361.0" mnemonicParsing="false" text="Upload" />
+                        <DatePicker fx:id="dateMuseumFoundationDate" layoutX="167.0" layoutY="187.0" prefHeight="26.0" prefWidth="241.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
